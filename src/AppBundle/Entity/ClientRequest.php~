@@ -1,0 +1,224 @@
+<?php
+// src/AppBundle/Entity/ClientRequest.php
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+/**
+* @ORM\Entity
+* @ORM\Table(name="requesttbl")
+*/
+class ClientRequest
+{
+    /**
+    * @ORM\Column(type="integer")
+    * @ORM\Id
+    * @ORM\GeneratedValue(strategy="AUTO")
+    */
+    private $request_id;
+    
+    /**
+    * @ORM\Column(type="integer")
+    * @Assert\NotBlank(groups={"add","edit"},message = "Choose the property whose attachment you want to upload")
+    */
+    private $property_id;
+    
+    /**
+    * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank(message = "Provide your full name")
+    */
+    private $client_name;
+
+    /**
+    * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank(message = "Provide your email")
+     * @Assert\Email(message = "Provide a valid email address.")
+    */
+    private $client_email;
+    
+    /**
+    * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank(message = "Provide your mobile number")
+    */
+    private $client_mobile;
+    
+    /**
+    * @ORM\Column(type="string", length=1000)
+     * @Assert\NotBlank(message = "Kindly write a message")
+    */
+    private $client_msg;
+    
+    /**
+    * @ORM\Column(type="string", length=100)
+    */
+    private $property_title;
+    
+     /**
+    * @ORM\Column(type="string", length=100)
+    */
+    private $post_status;
+    
+    /**
+     * Get categoryId
+     *
+     * @return integer
+     */
+    public function getCategoryId()
+    {
+        return $this->category_id;
+    }
+
+    /**
+     * Set categoryTitle
+     *
+     * @param string $categoryTitle
+     *
+     * @return Category
+     */
+    public function setCategoryTitle($categoryTitle)
+    {
+        $this->category_title = $categoryTitle;
+
+        return $this;
+    }
+
+    /**
+     * Get categoryTitle
+     *
+     * @return string
+     */
+    public function getCategoryTitle()
+    {
+        return $this->category_title;
+    }
+
+    /**
+     * Get requestId
+     *
+     * @return integer
+     */
+    public function getRequestId()
+    {
+        return $this->request_id;
+    }
+
+    /**
+     * Set clientName
+     *
+     * @param string $clientName
+     *
+     * @return Request
+     */
+    public function setClientName($clientName)
+    {
+        $this->client_name = $clientName;
+
+        return $this;
+    }
+
+    /**
+     * Get clientName
+     *
+     * @return string
+     */
+    public function getClientName()
+    {
+        return $this->client_name;
+    }
+
+    /**
+     * Set clientEmail
+     *
+     * @param string $clientEmail
+     *
+     * @return Request
+     */
+    public function setClientEmail($clientEmail)
+    {
+        $this->client_email = $clientEmail;
+
+        return $this;
+    }
+
+    /**
+     * Get clientEmail
+     *
+     * @return string
+     */
+    public function getClientEmail()
+    {
+        return $this->client_email;
+    }
+
+    /**
+     * Set clientMobile
+     *
+     * @param string $clientMobile
+     *
+     * @return Request
+     */
+    public function setClientMobile($clientMobile)
+    {
+        $this->client_mobile = $clientMobile;
+
+        return $this;
+    }
+
+    /**
+     * Get clientMobile
+     *
+     * @return string
+     */
+    public function getClientMobile()
+    {
+        return $this->client_mobile;
+    }
+
+    /**
+     * Set clientMsg
+     *
+     * @param string $clientMsg
+     *
+     * @return Request
+     */
+    public function setClientMsg($clientMsg)
+    {
+        $this->client_msg = $clientMsg;
+
+        return $this;
+    }
+
+    /**
+     * Get clientMsg
+     *
+     * @return string
+     */
+    public function getClientMsg()
+    {
+        return $this->client_msg;
+    }
+
+    /**
+     * Set postStatus
+     *
+     * @param string $postStatus
+     *
+     * @return Request
+     */
+    public function setPostStatus($postStatus)
+    {
+        $this->post_status = $postStatus;
+
+        return $this;
+    }
+
+    /**
+     * Get postStatus
+     *
+     * @return string
+     */
+    public function getPostStatus()
+    {
+        return $this->post_status;
+    }
+}

@@ -1,0 +1,70 @@
+{% extends 'admin.html.twig' %}
+{% block body %}
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                {{ page_header }}
+            </h1>
+        </div>
+    </div>
+    <!-- /.row -->
+    <div class="row"> 
+        <div class="col-md-6"> 
+            <h2>Edit Category</h2>
+            {% if update_msg %}
+                    <div class="alert alert-info" role="alert">
+                        {{ update_msg }}
+                    </div>
+            {% endif%}
+            {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+            {% if form_errors(form) %}
+                <div class="alert alert-danger" role="alert">
+                    {{ form_errors(form) }}
+                </div>
+            {% elseif errors%}
+                {%  for error in errors %}
+                    <div class="alert alert-danger" role="alert">
+                        <li>{{ error }}</li>
+                    </div>
+                {% endfor %}
+            {% endif %}
+            <div class="form-group">
+                <label for="exampleInputEmail1">Category Title</label>
+                <input type="hidden" value="{{update_details.getCategoryId}}" name="id">
+                {% if form_errors(form.category_title) %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ form_errors(form.category_title) }}
+                    </div>
+                {% endif %}
+                {{ form_widget(form.category_title, {'attr': {'class': 'form-control', 'value': update_details.getCategoryTitle}}) }}  
+            </div>
+            {{ form_widget(form.update, {'attr': {'class': 'btn btn-primary'}}) }}  
+            {{ form_widget(form.submit, {'attr': {'style' : 'visibility:hidden'}}) }}
+        {{ form_end(form) }}
+        </div>
+        
+        <div class="col-md-6">
+            <table class="table table-striped">
+                    <tr>
+                            <th>#</th>
+                            <th>Category Title</th>
+                            <th>Action</th>
+                    <tr>
+                    {% set num = 0 %}
+                    {% for category in categories %}
+                    <tr>
+                        {% set num=num+1  %}
+                        <td>{{ num }}</td>
+                            <td>{{category.getCategoryTitle}}</td>
+                            <td>
+                                <a class="btn btn-primary" href="{{url("edit_categories", {'edit': category.getCategoryId })}}">Edit</a>
+                                <a class="btn btn-danger" onclick='goto("{{url("delete_categories", {'delete': category.getCategoryId })}}")' id='delete_category'  href='#'>Delete</a>
+                            </td>
+                    </tr>
+                    
+                    {% endfor %}
+                    
+            </table>
+        </div>
+    </div>   
+{% endblock %}

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/src/AppBundle/Form/UserType.php</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/app/config/routing.yml</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/src/AppBundle/Controller/EditAttachmentController.php</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/src/AppBundle/Controller/LoginController.php</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/src/AppBundle/Form/CommentType.php</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/src/AppBundle/Controller/AdminController.php</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/app/Resources/views/home.html.twig</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/src/AppBundle/Entity/Category.php</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/app/Resources/views/admin/list_comment.html.twig</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/src/AppBundle/Controller/AddUsersController.php</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/src/AppBundle/Entity/User.php</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/app/Resources/views/admin/edit_attachment.html.twig</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/app/Resources/views/admin/add_users.html.twig</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/src/AppBundle/Controller/AddAttachmentController.php</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/src/AppBundle/Entity/Post.php</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/src/AppBundle/Form/PostType.php</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/app/Resources/views/admin.html.twig</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/src/AppBundle/Controller/AddPostController.php</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/src/AppBundle/Controller/DeleteCommentController.php</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/app/Resources/views/home/posts.html.twig</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/app/config/parameters.yml</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/app/Resources/views/admin/add_post.html.twig</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/src/AppBundle/Form/CategoryType.php</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/src/AppBundle/Controller/DeleteCategoryController.php</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/src/AppBundle/Form/AttachmentType.php</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/app/Resources/views/home/home.html.twig</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/app/config/routing_dev.yml</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/app/Resources/views/admin/add_attachment.html.twig</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/src/AppBundle/Controller/EditCategoryController.php</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/src/AppBundle/Controller/PostsController.php</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/app/Resources/views/home/view_more.html.twig</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/src/AppBundle/Controller/ViewMoreController.php</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/src/AppBundle/Controller/DeleteUserController.php</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/src/AppBundle/Entity/Comment.php</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/app/Resources/views/admin/edit_post.html.twig</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/src/AppBundle/Controller/DeleteAttachmentController.php</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/src/AppBundle/Controller/AddCategoryController.php</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/app/Resources/views/admin/index.html.twig</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/src/AppBundle/Controller/FullDetailsPostController.php</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/src/AppBundle/Controller/EditPostController.php</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/app/Resources/views/admin/add_category.html.twig</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/app/config/security.yml</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/src/AppBundle/Entity/Attachment.php</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/src/AppBundle/Controller/DeletePostController.php</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/src/AppBundle/Controller/ListCommentsController.php</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/app/Resources/views/admin/post_detail.html.twig</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/src/AppBundle/Controller/HomeController.php</file>
+            <file>file:/C:/xampp/htdocs/computer_aided_learning/app/Resources/views/admin/edit_category.html.twig</file>
+        </group>
+    </open-files>
+</project-private>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Focus Academy: Login</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href={{asset("css/bootstrap.min.css")}} rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href={{asset("css/blog-home.css")}} rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+            <!-- Blog Sidebar Widgets Column -->
+            <div class="col-md-4 col-lg-offset-4">
+                <!-- Side Widget Well -->
+                <div class="well">
+                    <h4 align="center">Admin Login</h4>
+                    <form name="login_form" method="POST" action="{{ url("login") }}">
+                        {% if errors %}
+                            <div class="alert alert-danger" role="alert">
+                                {{ errors.messageKey|trans(errors.messageData, 'security') }}
+                            </div>
+                        {% endif %}
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Username</label>
+                            <input type="text" name="_username" value="{{ last_username }}" class="form-control"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" name="_password" class="form-control" />
+                        </div>
+
+                        <input type="submit" name="submit" value="Log In" class="btn btn-primary">
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p style="text-align:center">Copyright &copy; www.focus_academy.com 2017</p>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src={{asset("js/jquery.js")}}></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src={{asset("js/bootstrap.min.js")}}></script>
+
+</body>
+
+</html>

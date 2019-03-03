@@ -1,0 +1,143 @@
+{% extends 'admin.html.twig' %}
+{% block body %}
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                {{ page_header }}
+            </h1>
+        </div>
+    </div>
+    <!-- /.row -->
+    <div class="row"> 
+        <div class="col-md-4"> 
+            <h2>Add User</h2>
+            {% if create_msg %}
+                    <div class="alert alert-info" role="alert">
+                        {{ create_msg }}
+                    </div>
+            {% endif%}
+            {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+            {% if form_errors(form) %}
+                <div class="alert alert-danger" role="alert">
+                    {{ form_errors(form) }}
+                </div>
+            {% elseif errors%}
+                {%  for error in errors %}
+                    <div class="alert alert-danger" role="alert">
+                        <li>{{ error }}</li>
+                    </div>
+                {% endfor %}
+            {% endif %}
+            <div class="form-group">
+                <label for="exampleInputEmail1">Surname</label>
+                {% if form_errors(form.surname) %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ form_errors(form.surname) }}
+                    </div>
+                {% endif %}
+                {{ form_widget(form.surname, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Othername</label>
+                {% if form_errors(form.othername) %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ form_errors(form.othername) }}
+                    </div>
+                {% endif %}
+                {{ form_widget(form.othername, {'attr': {'class': 'form-control'}}) }}  
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Firstname</label>
+                {% if form_errors(form.firstname) %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ form_errors(form.firstname) }}
+                    </div>
+                {% endif %}
+                {{ form_widget(form.firstname, {'attr': {'class': 'form-control'}}) }}  
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email</label>
+                {% if form_errors(form.email) %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ form_errors(form.email) }}
+                    </div>
+                {% endif %}
+                {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}  
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Username</label>
+                {% if form_errors(form.username) %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ form_errors(form.username) }}
+                    </div>
+                {% endif %}
+                {{ form_widget(form.username, {'attr': {'class': 'form-control'}}) }}  
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Password</label>
+                {% if form_errors(form.password) %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ form_errors(form.password) }}
+                    </div>
+                {% endif %}
+                {{ form_widget(form.password, {'attr': {'class': 'form-control'}}) }}  
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Confirm Password</label>
+                {% if form_errors(form.cpassword) %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ form_errors(form.cpassword) }}
+                    </div>
+                {% endif %}
+                {{ form_widget(form.cpassword, {'attr': {'class': 'form-control'}}) }}  
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Role</label>
+                {% if form_errors(form.role) %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ form_errors(form.role) }}
+                    </div>
+                {% endif %}
+                {{ form_widget(form.role, {'attr': {'class': 'form-control'}}) }}  
+            </div>
+            {{ form_widget(form.submit, {'attr': {'class': 'btn btn-primary'}}) }} 
+            {{ form_widget(form.update, {'attr': {'style' : 'visibility:hidden'}}) }}
+        {{ form_end(form) }}
+    </div>
+        
+        <div class="col-md-8 table-responsive">
+            {% if users %}
+                <table class="table table-hover table-bordered">
+                     <tr>
+                         <th>#</th>
+                         <th>User Surname</th>
+                         <th>User Firstname</th>
+                         <th>User Email</th>
+                         <th>Username</th>
+                         <th>Role</th>
+                         <th>Action</th>
+
+                     <tr>
+                     {% set num = 0 %}
+                     {% for u in users %}
+                         <tr>
+                             {% set num=num+1  %}
+                             <td>{{ num }}</td>
+                             <td>{{u.getSurname}}</td>
+                             <td>{{u.getFirstname}}</td>
+                             <td>{{u.getEmail}}</td>
+                             <td>{{u.getUsername}}</td>
+                             <td>{{u.getRole}}</td>
+                             <td>
+                                     <a class="btn btn-primary" href="{{url("edit_users", {'edit': u.getId })}}">Edit</a>
+                                     <a class="btn btn-danger" onclick='goto3("{{url("delete_users", {'delete': u.getId })}}")' href='#'>Delete</a>
+                             </td>
+                         </tr> 
+                     {% endfor %}
+                 </table>
+            {%else%}
+                <h1 align="center">No users yet!.</h1>
+            {% endif %}
+        </div>
+    </div>   
+{% endblock %}

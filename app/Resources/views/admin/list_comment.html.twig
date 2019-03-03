@@ -1,0 +1,45 @@
+{% extends 'admin.html.twig' %}
+{% block body %}
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                {{ page_header }}
+            </h1>
+        </div>
+    </div>
+    <!-- /.row -->
+    <div class="row"> 
+        <div class="col-md-12 table-responsive">
+            {% if comments %}
+                <table class="table table-hover table-bordered">
+                     <tr>
+                         <th>#</th>
+                         <th>Post Title</th>
+                         <th>Firstname</th>
+                         <th>Lastname</th>
+                         <th>Content</th>
+                         <th>Date</th>
+                         <th>Action</th>
+                     <tr>
+                     {% set num = 0 %}
+                     {% for comment in comments %}
+                         <tr>
+                             {% set num=num+1  %}
+                             <td>{{ num }}</td>
+                             <td>{{comment.getPostTitle}}</td>
+                             <td>{{comment.getFirstname}}</td>
+                             <td>{{comment.getSurname}}</td>
+                             <td>{{comment.getCommentContent}}</td>
+                             <td>{{comment.getCommentDate.format("M d, Y \\a\\t H : i A")}}</td>
+                             <td>
+                                 <a class="btn btn-danger" onclick='goto4("{{url("delete_comments", {'delete': comment.getCommentId })}}")' id='delete_category'  href='#'>Delete</a>
+                             </td>
+                         </tr> 
+                     {% endfor %}
+                 </table>
+            {%else%}
+                <h1 align="center">No comments yet!.</h1>
+            {% endif %}
+        </div>
+    </div>   
+{% endblock %}

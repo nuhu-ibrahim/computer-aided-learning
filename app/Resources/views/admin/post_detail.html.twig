@@ -1,0 +1,52 @@
+{% extends 'admin.html.twig' %}
+{% block body %}
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                {{ page_header }}
+            </h1>
+        </div>
+    </div>
+    <!-- /.row -->
+    <div class="row"> 
+        <div class="col-md-12  table-responsive" id="toPrint"> 
+            <h2>Post Full Detail</h2>
+            <table class="table table-hover table-bordered" >
+                <tr>
+                     <td colspan="2"><p style="text-align:center;"><img src="{{asset(["uploads/",post.getPostImage]|join)}}" alt="Post Image"/></p></td>
+                </tr>
+                <tr>
+                     <th>Post Author</th>
+                     <td>{{post.getPostAuthor}}</td>
+                </tr>
+                <tr>
+                     <th>Post Status</th>
+                     <td>{{post.getPostStatus}}</td>
+                </tr>
+                <tr>
+                     <th>Category Title</th>
+                     <td>{{post.getCategoryTitle}}</td>
+                </tr>
+                <tr>
+                     <th>Post Title</th>
+                     <td>{{post.getPostTitle}}</td>
+                </tr>
+                <tr>
+                     <th>Post Description</th>
+                     <td>{{post.getPostDesc}}</td>
+                </tr>
+                <tr>
+                     <th>Post Content</th>
+                     <td>{{post.getPostContent}}</td>
+                </tr>
+                <tr>
+                    <td align="center" colspan="2">
+                        <form class="form-inline">
+                            <button onclick="printDiv('toPrint')" type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-print" aria-hidden="true"><span style='visibility:hidden;'>ii</span></span>Print Property Deatails</button>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>   
+{% endblock %}
